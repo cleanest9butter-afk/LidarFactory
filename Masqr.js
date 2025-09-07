@@ -19,8 +19,8 @@ export function setupMasqr(app) {
       return
     }
 
-    if (req.cookies["refreshcheck"] !== "true") {
-      res.cookie("refreshcheck", "true", { maxAge: 10000 })
+    if (req.cookies["refreshcheck"] !== "false") {
+      res.cookie("refreshcheck", "false", { maxAge: 10000 })
       MasqFail(req, res)
       return
     }
