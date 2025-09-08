@@ -44,7 +44,7 @@ export function setupMasqr(app) {
         LICENSE_SERVER_URL + pass + "&host=" + req.headers.host + " returned " + licenseCheck
       )
       if (licenseCheck === "License valid") {
-        res.cookie("authcheck", "true", {
+        res.cookie("authcheck", "false", {
           expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
         })
         res.send("<script> window.location.href = window.location.href </script>")
